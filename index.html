@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Online WEB IDE</title>
+	<meta charset="utf-8">
+	<script>
+		function refresh(){
+			var textContent = document.getElementById('editor-textarea').value;
+			document.getElementById('viewer').srcdoc = textContent;
+		}
+	</script>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.main{
+			background: #2C3335;
+			width: 100vw;
+			height: 100vh;
+			display: inline-flex;
+		}
+		#editor-textarea{
+			background: #DAE0E2;
+			width: 100vw;
+			height: 95vh;
+			margin: 10px;
+			padding: 5px;
+			outline: none;
+			resize: none;
+			border: 1px solid #3498db;			
+		}
+		#viewer{
+			background: #DAE0E2;
+			width: 100vw;
+			height: 95vh;
+			margin: 10px;
+			border: 1px solid #3498db;
+		}
+	</style>
+</head>
+<body >
+	<div class="main">
+		<textarea id="editor-textarea" onkeyup="refresh()" placeholder="Tu código aquí..."></textarea>
+		<iframe id="viewer"></iframe>	
+	</div>
+</body>
+</html>
